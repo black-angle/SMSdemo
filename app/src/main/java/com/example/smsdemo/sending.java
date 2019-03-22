@@ -9,7 +9,7 @@ import android.widget.ListView;
 
 public class sending extends AppCompatActivity {
 
-    private String[] data=new String[1];
+    private String[] data=new String[10];
             //{"StudentA                                        successfully","StudentB                                        successfully"};
 
     @Override
@@ -18,8 +18,9 @@ public class sending extends AppCompatActivity {
         setContentView(R.layout.activity_sending);
 
         Intent tv=getIntent();
-        String t=tv.getStringExtra("data");
-        data[0]=t;//tv.getStringExtra("data");
+        data=tv.getStringArrayExtra("data");
+        //String t=tv.getStringExtra("data");
+        //data[0]=t;//tv.getStringExtra("data");
 
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(sending.this,android.R.layout.simple_list_item_1,data);
         ListView listView=(ListView)findViewById(R.id.listsending);

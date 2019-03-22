@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.os.Bundle;
 
 public class address extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -42,9 +43,18 @@ public class address extends AppCompatActivity implements AdapterView.OnItemClic
 
         Intent intent=new Intent(address.this,message.class);
         //finish();
-        //Bundle bundle = new Bundle() ;
-        //bundle.putString("data",text);
-        intent.putExtra("data",text);
+        Bundle bundle = new Bundle() ;
+        bundle.putString("dataname",text);
+        if(text.equals("Group1")){
+            bundle.putSerializable("data",new String[]{"StudentA","StudentB"});
+        }
+        else if(text.equals("Group2")){
+            bundle.putSerializable("data",new String[]{"StudentC"});
+        }
+        else {
+            bundle.putSerializable("data",new String[]{text});
+        }
+        intent.putExtras(bundle);
         startActivity(intent);
         /*
         String text = listView.getItemAtPosition(position) + "";// 指定位置的内容
