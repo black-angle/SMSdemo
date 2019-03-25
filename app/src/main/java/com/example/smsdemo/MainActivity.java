@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void bnew(View view){
+        //Toast.makeText(this, "Hello",Toast.LENGTH_LONG).show();
         Intent intent=new Intent(MainActivity.this,address.class);
         //finish();
         startActivity(intent);

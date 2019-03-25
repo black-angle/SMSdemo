@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="Files"
+        android:text="Template"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -21,8 +21,8 @@
 
     <ListView
         android:id="@+id/listfiles"
-        android:layout_width="395dp"
-        android:layout_height="546dp"
+        android:layout_width="299dp"
+        android:layout_height="398dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"

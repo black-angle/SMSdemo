@@ -21,12 +21,12 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="146dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="17dp"
         android:onClick="bnew"
         android:text="New Message"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -34,8 +34,8 @@
 
     <ListView
         android:id="@+id/listsent"
-        android:layout_width="395dp"
-        android:layout_height="491dp"
+        android:layout_width="309dp"
+        android:layout_height="303dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="52dp"

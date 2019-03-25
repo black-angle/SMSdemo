@@ -15,7 +15,7 @@ public class address extends AppCompatActivity implements AdapterView.OnItemClic
     private ListView listView;
 
     private String[] data=
-            {"Group1","  StudentA","  StudentB","Group2","  StudentC"};
+            {"Group1","  StudentA                 10086","  StudentB                 10087","Group2","  StudentC              13101294887"};
 
 
     @Override
@@ -44,15 +44,23 @@ public class address extends AppCompatActivity implements AdapterView.OnItemClic
         Intent intent=new Intent(address.this,message.class);
         //finish();
         Bundle bundle = new Bundle() ;
-        bundle.putString("dataname",text);
+        bundle.putInt("type",4);
+        //bundle.putString("dataname",text);
         if(text.equals("Group1")){
-            bundle.putSerializable("data",new String[]{"StudentA","StudentB"});
+            bundle.putString("dataname",text);bundle.putSerializable("data",new String[]{"StudentA","StudentB"});
         }
         else if(text.equals("Group2")){
-            bundle.putSerializable("data",new String[]{"StudentC"});
+            bundle.putString("dataname",text);bundle.putSerializable("data",new String[]{"StudentC"});
         }
-        else {
-            bundle.putSerializable("data",new String[]{text});
+        else if(text.charAt(9)=='A'){
+            //Toast.makeText(this, "AAA",Toast.LENGTH_LONG).show();
+            bundle.putString("dataname","StudentA");bundle.putSerializable("data",new String[]{"StudentA"});
+        }
+        else if(text.charAt(9)=='B'){
+            bundle.putString("dataname","StudentB");bundle.putSerializable("data",new String[]{"StudentB"});
+        }
+        else if(text.charAt(9)=='C'){
+            bundle.putString("dataname","StudentC");bundle.putSerializable("data",new String[]{"StudentC"});
         }
         intent.putExtras(bundle);
         startActivity(intent);
