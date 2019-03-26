@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class message extends AppCompatActivity {
 
@@ -52,6 +53,11 @@ public class message extends AppCompatActivity {
     }
 
     public void bsend(View view){
+        if(t2.getText().toString().equals("")){
+            Toast.makeText(this, "The message can't be empty.",Toast.LENGTH_LONG).show();
+            return;
+        }
+
         Intent intent=new Intent(message.this,sending.class);
         //finish();
         Bundle bundle = new Bundle() ;

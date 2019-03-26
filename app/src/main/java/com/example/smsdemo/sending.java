@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class sending extends AppCompatActivity {
@@ -22,6 +23,7 @@ public class sending extends AppCompatActivity {
             //{"StudentA                                        successfully","StudentB                                        successfully"};
     private String text;
     private String mes;
+    private TextView tt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +79,9 @@ public class sending extends AppCompatActivity {
             return "10087";
         }
         else if(name.equals("StudentC")){
-            return "13101294887";
+            //return "13101294887";
+            //return "17754927476";
+            return "17725023950";
         }
         return "000";
     }
@@ -160,22 +164,27 @@ public class sending extends AppCompatActivity {
                 sendmes(renum(data[i]),getmess(data[i],renum(data[i]),mes));
             }
         }
+        Toast.makeText(sending.this, "SMS sending completed."
+                , Toast.LENGTH_SHORT).show();
+
+        tt=(TextView) findViewById(R.id.textView5);
+        tt.setText("Completed");
         //String tt="hello";
         //SmsManager smr=SmsManager.getDefault();
         //PendingIntent pi = PendingIntent.getActivity(sending.this, 0, new Intent(), 0);
-        // 发送短信
+        //
         //smr.sendTextMessage("13101294887", null, tt, pi, null);
     }
 
     public void bback(View view){
-
+/*
         String tt="hello";
         SmsManager smr=SmsManager.getDefault();
         PendingIntent pi = PendingIntent.getActivity(
                 sending.this, 0, new Intent(), 0);
-        // 发送短信
+        // send message
         smr.sendTextMessage("13101294887", null, tt, pi, null);
-
+*/
         /*getPrivilege(Manifest.permission.SEND_SMS);
         String tt="hello";
         SmsManager smr=SmsManager.getDefault();
@@ -187,12 +196,12 @@ public class sending extends AppCompatActivity {
             if(ContextCompat.checkSelfPermission(sending.this, Manifest.permission.READ_PHONE_STATE)
                     != PackageManager.PERMISSION_GRANTED){
 
-                Log.e("TAG", "未授权");
+                Log.e("TAG", "");
                 ActivityCompat.requestPermissions(sending.this,new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
-                Log.e("TAG", "现授权");
+                Log.e("TAG", "");
             }else{
-                //得到授权，直接进行要做的操作
-                Log.e("TAG", "已经授权");
+                //
+                Log.e("TAG", "");
                 String tt="hello";
                 SmsManager smr=SmsManager.getDefault();
                 //smr.sendTextMessage("10086",null,tt,null,null);
@@ -202,15 +211,15 @@ public class sending extends AppCompatActivity {
         //getPrivilege(Manifest.permission.SEND_SMS);
         /*int permissionCheck = ContextCompat.checkSelfPermission(this,Manifest.permission.SEND_SMS );
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            Log.e("TAG", "已经授权");
+            Log.e("TAG", "");
         } else {
-            Log.e("TAG", "未授权");
+            Log.e("TAG", "");
         }*/
-        /*
+
         Intent intent=new Intent(sending.this,MainActivity.class);
         //finish();
 
         startActivity(intent);
-*/
+
     }
 }
