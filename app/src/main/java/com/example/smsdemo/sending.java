@@ -169,6 +169,8 @@ public class sending extends AppCompatActivity {
 
         tt=(TextView) findViewById(R.id.textView5);
         tt.setText("Completed");
+        tt=(TextView) findViewById(R.id.button2);
+        tt.setText("RESEND");
         //String tt="hello";
         //SmsManager smr=SmsManager.getDefault();
         //PendingIntent pi = PendingIntent.getActivity(sending.this, 0, new Intent(), 0);
