@@ -79,9 +79,9 @@ public class sending extends AppCompatActivity {
             return "10087";
         }
         else if(name.equals("StudentC")){
-            //return "13101294887";
+            return "13101294887";
             //return "17754927476";
-            return "17725023950";
+            //return "17725023950";
         }
         return "000";
     }
